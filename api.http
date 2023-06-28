@@ -1,0 +1,29 @@
+
+###
+POST http://localhost:3000/v1/users
+Content-Type: application/json
+
+{
+    "name": "O bebê Souza dos Santos Latchuk"
+}
+
+###
+GET http://localhost:3000/v1/users
+
+
+###
+POST http://localhost:3000/v1/users/92a49ed6-d4a1-4d84-8199-23a71d462d1a/tasks
+Content-Type: application/json
+
+{
+    "description": "2"
+}
+
+###
+GET http://localhost:3000/v1/users/92a49ed6-d4a1-4d84-8199-23a71d462d1a/tasks?description=2
+
+###
+PUT http://localhost:3000/v1/users/92a49ed6-d4a1-4d84-8199-23a71d462d1a/tasks/a62c48df-aff3-4317-a508-d116198b8a77/completed
+
+###
+PUT http://localhost:3000/v1/users/92a49ed6-d4a1-4d84-8199-23a71d462d1a/tasks/a62c48df-aff3-4317-a508-d116198b8a77/uncompleted
