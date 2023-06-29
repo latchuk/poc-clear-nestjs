@@ -11,7 +11,7 @@ model User {
   id        String   @id
   name      String
   createdAt DateTime
-  tasks Task[]
+  tasks     Task[]
 }
 
 model Task {
@@ -19,6 +19,6 @@ model Task {
   description String
   createdAt   DateTime
   completed   Boolean
-  user User @relation(fields: [userId], references: [id])
-  userId String
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
 }

@@ -14,6 +14,10 @@ import { CompleteTaskService } from './services/task/complete-task.service';
 import { DeleteTaskService } from './services/task/delete-task.service';
 import { UncompleteTaskService } from './services/task/uncomplete-task.service';
 import { DeleteUserService } from './services/user/delete-user.service';
+import { RestClient } from 'typed-rest-client';
+import { AdviceClient } from './clients/client/advice.client';
+import { AdviceTypedRestClient } from './clients/typed-rest-client/advice.typed-rest-client';
+import { FindUserWithSomeAdviceService } from './services/user/find-user-with-some-advice.service';
 
 @Module({
   imports: [],
@@ -27,6 +31,7 @@ import { DeleteUserService } from './services/user/delete-user.service';
     CreateUserService,
     ListUserService,
     DeleteUserService,
+    FindUserWithSomeAdviceService,
 
     // Task Services
     CompleteTaskService,
@@ -44,6 +49,15 @@ import { DeleteUserService } from './services/user/delete-user.service';
     {
       provide: TaskRepository,
       useClass: TaskPrismaRepository
+    },
+
+    // Http REST Client
+    RestClient,
+
+    // Clients config
+    {
+      provide: AdviceClient,
+      useClass: AdviceTypedRestClient
     }
 
   ],
